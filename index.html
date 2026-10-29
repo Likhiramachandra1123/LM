@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="journey-loading">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0410" />
+    <title>L &amp; M — A Beautiful Story · 2018 to Forever</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/index-DTuIX-2N.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-y5_DzglG.css">
+  </head>
+  <body>
+    <!-- Intro loader -->
+    <div id="loader">
+      <div class="loader-inner">
+        <div class="loader-kicker">a beautiful story, lived one little moment at a time</div>
+        <div class="loader-orbit" aria-hidden="true"><span>✦</span><i></i><b>✧</b></div>
+        <div class="loader-monogram">L &amp; M</div>
+        <div class="loader-text" role="status">Saving you a seat in our story.</div>
+        <p class="loader-note">Please stay a little moment while we gather our memories.<br />Your journey with us begins at our very first hello.</p>
+        <div class="loader-bar" role="progressbar" aria-label="Preparing our journey" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+        <div class="loader-percentage" id="loaderPercentage" aria-hidden="true">0%</div>
+        <p class="loader-stage" id="loaderStage" role="status">Opening the memory book…</p>
+        <div class="loader-dedication"><span>2018</span><i>with love, always</i><span>forever</span></div>
+      </div>
+    </div>
+
+    <header class="journey-header">
+      <span class="brand">L <i>&amp;</i> M</span>
+      <span class="controls-est">Est. 2018</span>
+      <div class="journey-controls" aria-label="Journey playback">
+        <button id="musicToggle" type="button" aria-pressed="false">♫ Enable music</button>
+        <div class="auto-scroll-controls">
+          <button id="autoScroll" type="button" aria-pressed="false" title="Scroll automatically, slowing for captions. Scroll manually or tap Pause to stop.">▶ Auto scroll</button>
+          <select id="autoScrollSpeed" aria-label="Auto-scroll speed" title="Auto-scroll speed">
+            <option value="1" selected>1×</option>
+            <option value="2">2×</option>
+            <option value="3">3×</option>
+            <option value="4">4×</option>
+            <option value="5">5×</option>
+          </select>
+        </div>
+      </div>
+    </header>
+    <!-- The three.js stage -->
+    <canvas id="stage" role="img" aria-label="A scroll-directed 3D journey of L &amp; M, from 2018 to forever"></canvas>
+    <aside class="story-panel" aria-label="Current story moment">
+      <div class="moment-card"><span id="momentBeat">Our first hello</span><p id="momentDetail">I didn’t know it then, but I would remember you.</p><div class="moment-track"><i id="momentProgress"></i></div></div>
+      <div class="scene-caption"><span>A LITTLE MOMENT, JUST US</span><p id="sceneAction">My favourite place is beside you.</p></div>
+    </aside>
+    <div id="chapterVeil" aria-hidden="true"><div class="transition-art"></div><span id="transitionKicker"></span><strong id="transitionTitle"></strong><em id="transitionSubtitle"></em></div>
+    <div class="cinema-bars" aria-hidden="true"></div>
+    <div class="film-label"><span>L + M / A BEAUTIFUL STORY</span><span id="shotLabel">SCENE 01 · BENGALURU, 2018</span></div>
+
+    <!-- Soft vignette + grain overlays -->
+    <div class="vignette"></div>
+    <div class="grain"></div>
+
+    <!-- Editorial frame overlay -->
+    <div class="frame">
+      <div class="story-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="frame-side left"><span>A Love Journey</span></div>
+      <div class="frame-side right"><span id="sideChapter">Prologue</span></div>
+      <div class="frame-row bottom">
+        <span class="frame-meta">Bengaluru · India</span>
+        <span class="frame-meta">2018 — Forever</span>
+      </div>
+    </div>
+
+    <!-- Large chapter index -->
+    <div class="chapter-index" id="chapterIndex">
+      <span class="ci-num" id="ciNum">01</span>
+      <span class="ci-total">/ 08</span>
+    </div>
+
+    <!-- Floating progress dial -->
+    <div class="hud">
+      <div class="hud-chapter" id="hudChapter">Prologue</div>
+      <div class="hud-track"><div class="hud-fill" id="hudFill"></div></div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint" id="scrollHint">
+      <div class="swipe-cue" aria-hidden="true"><i></i><b>↑</b></div>
+      <span class="swipe-touch">Swipe up to travel through our journey</span>
+      <span class="swipe-desktop">Scroll to travel through our journey</span>
+      <small>From our first hello to every tomorrow.</small>
+    </div>
+
+    <!-- Story content, each section drives a chapter -->
+    <main id="scroll">
+      <section class="chapter" data-chapter="0">
+        <div class="copy center">
+          <p class="eyebrow">scene 01 / bengaluru, 2018</p>
+          <h1>One morning.<br />Then <em>you.</em></h1>
+          <p class="lede">
+            I took the bus to college. You were already there,
+            laughing with your friends. I didn’t know your name yet.
+            That ordinary morning was about to change everything.
+          </p>
+        </div>
+      </section>
+
+      <section class="chapter" data-chapter="1">
+        <div class="copy left">
+          <p class="eyebrow">scene 02 / sapthagiri college of engineering</p>
+          <h2>Somewhere between<br /><em>hello &amp; home.</em></h2>
+          <p>
+            Between shared notes and the walk after class,
+            I began saving the little things to tell you.
+            Ordinary days felt different with you in them.
+          </p>
+        </div>
+      </section>
+
+      <section class="chapter" data-chapter="2">
+        <div class="copy right">
+          <p class="eyebrow">scene 03 / the hours we made ours</p>
+          <h2>A little longer,<br /><em>just us.</em></h2>
+          <p>
+            One more cup of chai. Your hand finding mine.
+            From our little roadside dates to a morning above the clouds,
+            I kept wishing the way home were longer.
+          </p>
+        </div>
+      </section>
+
+      <section class="chapter" data-chapter="3">
+        <div class="copy left">
+          <p class="eyebrow">scene 04 / a quieter kind of love</p>
+          <h2>In the quiet,<br /><em>always you.</em></h2>
+          <p>
+            Beside you, with folded hands and the lamps glowing,
+            my wish was simple: whatever comes next,
+            may we keep choosing each other.
+          </p>
+        </div>
+      </section>
+
+      <section class="chapter" data-chapter="4">
+        <div class="copy left">
+          <p class="eyebrow">scene 05 / pondicherry · 2024 → 2025</p>
+          <h2>Four of us.<br /><em>A brand-new year.</em></h2>
+          <p>Breakfast at nine, colourful French-quarter streets, and photos by the sea. By midnight, we were laughing above the city at Chitra’s Cuisine—welcoming 2025 together.</p>
+        </div>
+      </section>
+
+      <section class="chapter" data-chapter="5">
+        <div class="copy left">
+          <p class="eyebrow">scene 06 / departures &amp; arrivals</p>
+          <h2>An ocean apart.<br /><em>Still us.</em></h2>
+          <p>
+            A first goodbye. A return after one year and five months of silence.
+            A small “Sorry!” on the road. Two months later, another departure—
+            and one year after that, the reunion we had been waiting for.
+          </p>
+        </div>
+      </section>
+
+      <section class="chapter" data-chapter="6">
+        <div class="copy right">
+          <p class="eyebrow">scene 07 / back together, beyond the city</p>
+          <h2>Every road,<br /><em>closer to you.</em></h2>
+          <p>
+            After one year apart, we followed winding roads into misty mornings,
+            singing the songs we knew by heart.
+            This time, you were right beside me. No screen between us.
+          </p>
+        </div>
+      </section>
+
+      <section class="chapter" data-chapter="7">
+        <div class="copy center">
+          <p class="eyebrow">one last page / a new beginning</p>
+          <h2 class="reveal-title">My Loff.<br /><em>My every tomorrow.</em></h2>
+          <div class="finale-keepsake">One little word, only ours. A whole lifetime to mean it.</div>
+          <p class="reveal-sub">
+            A college corridor. The long way home. A year of “I miss you.”
+            Now, a lifetime of “I’m right here.”
+            <strong>Our favourite chapter is still unwritten. Come be part of it.</strong>
+          </p>
+          <div class="save-date">
+            <span>A date to keep · coming soon</span>
+            <em>With love, L &amp; M</em>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="model-note">A little album of us · 2018 — forever</div>
+
+    <nav class="journey-nav" aria-label="Journey chapters">
+      <button type="button" data-scene="0" aria-label="The beginning, 2018" aria-current="step">01</button>
+      <button type="button" data-scene="1" aria-label="Falling in love at college">02</button>
+      <button type="button" data-scene="2" aria-label="Chaat dates and evening rides">03</button>
+      <button type="button" data-scene="3" aria-label="Our quiet temple moment">04</button>
+      <button type="button" data-scene="4" aria-label="Pondicherry with friends, New Year 2025">05</button>
+      <button type="button" data-scene="5" aria-label="Airport departures, a return and reunion one year later">06</button>
+      <button type="button" data-scene="6" aria-label="Reunited, our journeys beyond the city">07</button>
+      <button type="button" data-scene="7" aria-label="Forever at the beach">08</button>
+    </nav>
+
+  </body>
+</html>
